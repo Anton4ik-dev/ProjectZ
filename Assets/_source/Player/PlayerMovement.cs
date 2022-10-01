@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangePlayerMod(bool mod)
     {
-        //_animator.SetBool("Mod", mod);
+        _animator.SetBool("Mod", mod);
         if(mod)
         {
             _playerSprite.sprite = _drunker;

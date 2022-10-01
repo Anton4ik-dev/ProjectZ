@@ -1308,10 +1308,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7167285508363179522, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167285508363179522, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167285508363179522, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}
+    - target: {fileID: 7167285508363179522, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7167285508363179526, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7167285508363179548, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: _standart
+      value: 
+      objectReference: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}
     - target: {fileID: 7167285508363179548, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
       propertyPath: _alcoholData
       value: 
