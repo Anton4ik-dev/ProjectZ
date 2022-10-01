@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AlcoholData _alcoholData;
     private Vector2 movement;
     private float _promile;
+    private bool _isInteractable = false;
+    private Collider2D _collision;
 
     private void Update()
     {
@@ -23,6 +25,22 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("Horizontal", movement.x);
         _animator.SetFloat("Vertical", movement.y);
         _animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if(_isInteractable)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                if (_collision.gameObject.layer == 3)
+                {
+                    _collision.gameObject.SetActive(false);
+                }
+                if (_collision.gameObject.layer == 6)
+                {
+                    _collision.gameObject.SetActive(false);
+                    ChangePromile(_collision.tag);
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -30,20 +48,15 @@ public class PlayerMovement : MonoBehaviour
         _rb.MovePosition(_rb.position + movement * _speed * Time.fixedDeltaTime);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Input.GetButtonDown("Jump"))
-        {
-            if (collision.gameObject.layer == 3)
-            {
-                collision.gameObject.SetActive(false);
-            }
-            if (collision.gameObject.layer == 6)
-            {
-                collision.gameObject.SetActive(false);
-                ChangePromile(collision.tag);
-            }
-        }
+        _collision = collision;
+        _isInteractable = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _isInteractable = false;
     }
 
     private void ChangePromile(string drink)
