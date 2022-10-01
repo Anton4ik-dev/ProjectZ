@@ -2686,6 +2686,10 @@ PrefabInstance:
       value: Alcohol&QuestMeneger
       objectReference: {fileID: 0}
     - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: alcSprites
+      value: 
+      objectReference: {fileID: 1705340273}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
       propertyPath: _alcoholSpawnPoints
       value: 
       objectReference: {fileID: 1908989752}
@@ -2832,6 +2836,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7673712337988136132, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
+      propertyPath: aclImgs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673712337988136132, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
+      propertyPath: aclImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c98e860d1c8376448699ba1925a52a3, type: 3}
+    - target: {fileID: 7673712337988136132, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
+      propertyPath: aclImgs.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: c5b9e052d735a124da4a4a7883c4db1e, type: 3}
+    - target: {fileID: 7673712337988136132, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
+      propertyPath: aclImgs.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: fe1b200f1f4d4384bacad31d7417a8bb, type: 3}
+    - target: {fileID: 7673712337988136132, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
+      propertyPath: aclImgs.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: d84d9030ce53d57429d4f1ab8ddb6839, type: 3}
     - target: {fileID: 7673712337988136133, guid: 83c9189fb26a40346a9a1a7273081773, type: 3}
       propertyPath: m_Name
       value: AlcoholPromiles

@@ -8,7 +8,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     private bool _isDrunk;
     [SerializeField] private Transform _alcoholSpawnPoints;
     [SerializeField] private List<Transform> _questTypes = new List<Transform>();
-    
+    [SerializeField] private AlcoholData alcSprites;
+
     void Start()
     {      
         QestPicker();    
@@ -32,6 +33,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         for (int i = 0; i < amountOfPubs; i++)
         {
             int picker = Random.Range(0, 10);
+            int alcImgRandom = Random.Range(0, 4);
+            _alcoholSpawnPoints.GetChild(picker).GetComponent<SpriteRenderer>().sprite = alcSprites.aclImgs[alcImgRandom];
             _alcoholSpawnPoints.GetChild(picker).gameObject.SetActive(true);
         }
     }

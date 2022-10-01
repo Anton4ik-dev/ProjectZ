@@ -8,4 +8,5 @@ public class AlcoholData : MonoBehaviour
     public float winePromile;
     public float whiskyPromile;
     public float vodkaPromile;
+    public List<Sprite> aclImgs = new List<Sprite>();
 }
