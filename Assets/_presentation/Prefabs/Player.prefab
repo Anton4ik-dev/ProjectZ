@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7167285508363179526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5153, y: -1.7107, z: 0}
-  m_LocalScale: {x: 13.363504, y: 13.363505, z: 13.363505}
+  m_LocalScale: {x: 7.7788954, y: 7.7788963, z: 7.7788963}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,8 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _neededPromile: 0
   _rb: {fileID: 7167285508363179520}
   _animator: {fileID: 7167285508363179521}
   _playerSprite: {fileID: 7167285508363179522}
   _standart: {fileID: 21300000, guid: 719c37e91420dcb49ab5068677b69ab8, type: 3}
-  _drunker: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  _drunker: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}

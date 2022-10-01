@@ -43,7 +43,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         }
     }
 
-    public void Assign(bool madMicelsonNaPricole)
+    public void GetBoolean(bool madMicelsonNaPricole)
     {
         _isDrunk = madMicelsonNaPricole;
         if (_isDrunk == true)

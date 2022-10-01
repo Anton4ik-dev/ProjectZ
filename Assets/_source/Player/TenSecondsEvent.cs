@@ -18,7 +18,7 @@ public class TenSecondsEvent : MonoBehaviour
                 _isDrunkerMod = value;
                 //call methods
                 _playerMethod.ChangePlayerMod(IsDrunkerMod);
-                _beerMethod.Assign(IsDrunkerMod);
+                _beerMethod.GetBoolean(IsDrunkerMod);
             }
         }
     }

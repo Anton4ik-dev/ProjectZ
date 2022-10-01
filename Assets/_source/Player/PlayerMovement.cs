@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private float _neededPromile;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _playerSprite;
     [SerializeField] private Sprite _standart;
     [SerializeField] private Sprite _drunker;
+    [SerializeField] private AlcoholData _alcoholData;
     private Vector2 movement;
+    private float _promile;
 
     private void Update()
     {
@@ -27,6 +30,41 @@ public class PlayerMovement : MonoBehaviour
         _rb.MovePosition(_rb.position + movement * _speed * Time.fixedDeltaTime);
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(Input.GetButtonDown("Jump"))
+        {
+            if (collision.gameObject.layer == 3)
+            {
+                collision.gameObject.SetActive(false);
+            }
+            if (collision.gameObject.layer == 6)
+            {
+                collision.gameObject.SetActive(false);
+                ChangePromile(collision.tag);
+            }
+        }
+    }
+
+    private void ChangePromile(string drink)
+    {
+        if(drink == "wine")
+        {
+            _promile += _alcoholData.winePromile;
+        } else if(drink == "whisky")
+        {
+            _promile += _alcoholData.whiskyPromile;
+        }
+        else if (drink == "beer")
+        {
+            _promile += _alcoholData.beerPromile;
+        }
+        else if (drink == "vodka")
+        {
+            _promile += _alcoholData.vodkaPromile;
+        }
+    }
+
     public void ChangePlayerMod(bool mod)
     {
         //_animator.SetBool("Mod", mod);
@@ -36,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             _playerSprite.sprite = _standart;
+            if(_promile <= _neededPromile)
+            {
+                Debug.Log("Not enough alcohol");
+                _promile = 0;
+            } 
         }
     }
 }
