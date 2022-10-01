@@ -6,53 +6,52 @@ using UnityEngine;
 public class BeerAndQuestsSpawner : MonoBehaviour
 {
     private bool _isDrunk;
-    public GameObject questFather;
-    public GameObject beerFather;
-    private int _kostl = 0;
+    [SerializeField] private Transform _alcoholSpawnPoints;
+    [SerializeField] private List<Transform> _questTypes = new List<Transform>();
+    
     void Start()
-    {
-        if(_kostl == 0)
-        {
-            qestPicker();
-            _kostl++;
+    {      
+        QestPicker();    
+    }
 
+    
+    private void QestPicker()
+    {
+        int picker = 0;
+        for (int i = 0; i < _questTypes.Count; i++)
+        {
+            picker = Random.Range(0, 5);
+            _questTypes[i].GetChild(picker).gameObject.SetActive(true);
         }
         
     }
 
-    
-    private void qestPicker()
-    {
-        int picker = Random.Range(0,5);
-        questFather.transform.GetChild(picker).gameObject.SetActive(true);
-    }
-
-    private void alcoholSpawner()
+    private void AlcoholSpawner()
     {
         int amountOfPubs = Random.Range(1,11);
         for (int i = 0; i < amountOfPubs; i++)
         {
             int picker = Random.Range(0, 10);
-            beerFather.transform.GetChild(picker).gameObject.SetActive(true);
+            _alcoholSpawnPoints.GetChild(picker).gameObject.SetActive(true);
         }
     }
-    private void alcoholDespawn()
+    private void AlcoholDespawn()
     {
         for (int i = 0; i < 10; i++)
         {
-            beerFather.transform.GetChild(i).gameObject.SetActive(false);
+            _alcoholSpawnPoints.GetChild(i).gameObject.SetActive(false);
         }
     }
 
-    public void assign(bool madMicelsonNaPricole)
+    public void Assign(bool madMicelsonNaPricole)
     {
         _isDrunk = madMicelsonNaPricole;
         if (_isDrunk == true)
         {
-            alcoholSpawner();
+            AlcoholSpawner();
         } else
         {
-            alcoholDespawn();
+            AlcoholDespawn();
         }
     }
     
