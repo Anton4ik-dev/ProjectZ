@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: beer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: beer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: whisky
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -1248,7 +1248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: whisky
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -1803,7 +1803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: wine
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -2091,7 +2091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: whisky
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -2173,7 +2173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: vodka
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -2239,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: beer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -2579,7 +2579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: wine
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder
@@ -2645,7 +2645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933418325421939787, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_TagString
-      value: vodka
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
       propertyPath: m_RootOrder

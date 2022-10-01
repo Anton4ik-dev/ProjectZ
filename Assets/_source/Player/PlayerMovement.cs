@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
                 if (_collision.gameObject.layer == 6)
                 {
                     _collision.gameObject.SetActive(false);
-                    ChangePromile(_collision.tag);
+                    ChangePromile(_collision.GetComponent<SpriteRenderer>().sprite.name);
                 }
             }
         }
@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _promile += _alcoholData.vodkaPromile;
         }
+        Debug.Log(_promile);
     }
 
     public void ChangePlayerMod(bool mod)
