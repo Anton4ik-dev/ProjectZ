@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
 
 public class BeerAndQuestsSpawner : MonoBehaviour
@@ -17,13 +18,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
 
         }
         
-
-        if (_isDrunk == true)
-        {
-            alcoholSpawner();
-        }
-        
     }
+
     
     private void qestPicker()
     {
@@ -40,10 +36,24 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             beerFather.transform.GetChild(picker).gameObject.SetActive(true);
         }
     }
+    private void alcoholDespawn()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            beerFather.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
 
     public void assign(bool madMicelsonNaPricole)
     {
         _isDrunk = madMicelsonNaPricole;
+        if (_isDrunk == true)
+        {
+            alcoholSpawner();
+        } else
+        {
+            alcoholDespawn();
+        }
     }
     
 }

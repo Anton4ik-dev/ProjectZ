@@ -5,6 +5,7 @@ using UnityEngine;
 public class TenSecondsEvent : MonoBehaviour
 {
     [SerializeField] private PlayerMovement _playerMethod;
+    [SerializeField] private BeerAndQuestsSpawner _beerMethod;
     private bool _isDrunkerMod = false;
     private float _tenSeconds = 10f;
     public bool IsDrunkerMod
@@ -17,6 +18,7 @@ public class TenSecondsEvent : MonoBehaviour
                 _isDrunkerMod = value;
                 //call methods
                 _playerMethod.ChangePlayerMod(IsDrunkerMod);
+                _beerMethod.assign(IsDrunkerMod);
             }
         }
     }
