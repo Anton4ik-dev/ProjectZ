@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEditor.Sprites;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class BeerAndQuestsSpawner : MonoBehaviour
@@ -15,7 +16,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private GameObject _questUI;
     [SerializeField] private GameObject _alcoholUI;
     [SerializeField] private GameObject _alcStastsUI;
-
+    [SerializeField] private GameObject _emojyDrunk;
+    
     private int _kostl = 0;
 
     void Start()
@@ -54,12 +56,15 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         _alcStastsUI.gameObject.SetActive(true);
         _alcoholUI.SetActive(true);
         _questUI.SetActive(false);
+       _emojyDrunk.SetActive(true );
     }
     private void UiQuestMod()
     {
+        
         _alcStastsUI.gameObject.SetActive(false);
         _questUI.SetActive(true);
         _alcoholUI.SetActive(false);
+        _emojyDrunk.SetActive(false);
         
     }
     private void AlcoholDespawn()
@@ -80,20 +85,13 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                 _hint.gameObject.SetActive(true);
             }
             AlcoholSpawner();
-            //UiAlcMod();
+            UiAlcMod();
         } else
         {
-            for (int i = 0; i < _questTypes.Count; i++)
-            {
-                for (int j = 0; j < _questTypes[i].transform.childCount; j++)
-                {
-                    _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = true;
-                }
-            }
             _hint.gameObject.SetActive(false);
             _kostl++;
             AlcoholDespawn();
-            //UiQuestMod();
+            UiQuestMod();
         }
     }
     
