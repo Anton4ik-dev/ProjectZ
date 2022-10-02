@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7167285508363179526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5153, y: -1.7107, z: 0}
-  m_LocalScale: {x: 7.7788954, y: 7.7788963, z: 7.7788963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,13 +76,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 719c37e91420dcb49ab5068677b69ab8, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.16, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.000000007450581, y: -0.0093471855}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.16, y: 0.24}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 0.16, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.24}
+  m_Size: {x: 0.14130561, y: 0.22130562}
   m_EdgeRadius: 0
 --- !u!50 &7167285508363179520
 Rigidbody2D:
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &7167285508363179521
 Animator:
   serializedVersion: 4
@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e25ae3a0e77f4cad90a9d7f5fba34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _neededPromile: 0
+  _speed: 1
+  _neededPromile: 2
   _rb: {fileID: 7167285508363179520}
   _animator: {fileID: 7167285508363179521}
   _playerSprite: {fileID: 7167285508363179522}
-  _standart: {fileID: 21300000, guid: 719c37e91420dcb49ab5068677b69ab8, type: 3}
+  _standart: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}
   _drunker: {fileID: 21300000, guid: 660e4924b6bd92a4286ef01e21013446, type: 3}
+  _alcoholData: {fileID: 0}
