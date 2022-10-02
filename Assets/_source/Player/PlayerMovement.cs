@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Sprite _standart;
     [SerializeField] private Sprite _drunker;
     [SerializeField] private AlcoholData _alcoholData;
+    [SerializeField] private QTESystem _qteSys;
     private Vector2 movement;
     private float _promile;
     private bool _isInteractable = false;
@@ -28,13 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(_isInteractable)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                if (_collision.gameObject.layer == 3)
+                if (_collision.gameObject.layer == 3) //events
                 {
-                    _collision.gameObject.SetActive(false);
+                    _qteSys.enabled = true;
                 }
-                if (_collision.gameObject.layer == 6)
+                if (_collision.gameObject.layer == 6) //alcohol
                 {
                     _collision.gameObject.SetActive(false);
                     ChangePromile(_collision.GetComponent<SpriteRenderer>().sprite.name);
@@ -51,11 +53,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _collision = collision;
+        if(_collision.gameObject.layer == 3)
+            _collision.transform.GetChild(0).gameObject.SetActive(true);
         _isInteractable = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(_collision.gameObject.layer == 3)
+            _collision.transform.GetChild(0).gameObject.SetActive(false);
         _isInteractable = false;
     }
 
@@ -76,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _promile += _alcoholData.vodkaPromile;
         }
-        Debug.Log(_promile);
     }
 
     public void ChangePlayerMod(bool mod)
@@ -90,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             _playerSprite.sprite = _standart;
             if(_promile <= _neededPromile)
             {
-                Debug.Log("Not enough alcohol");
+                //lose
                 _promile = 0;
             } 
         }
