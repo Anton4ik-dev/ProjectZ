@@ -80,13 +80,13 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                 _hint.gameObject.SetActive(true);
             }
             AlcoholSpawner();
-            UiAlcMod();
+            //UiAlcMod();
         } else
         {
             _hint.gameObject.SetActive(false);
             _kostl++;
             AlcoholDespawn();
-            UiQuestMod();
+            //UiQuestMod();
         }
     }
     
