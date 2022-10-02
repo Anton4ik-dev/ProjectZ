@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QTESystem : MonoBehaviour
@@ -10,7 +11,6 @@ public class QTESystem : MonoBehaviour
     [SerializeField] private List<string> _alphabet = new List<string>();
     [SerializeField] private List<Sprite> _sprites = new List<Sprite>();
     [SerializeField] private List<GameObject> _variants = new List<GameObject>();
-    [SerializeField] private List<TextMeshProUGUI> _texts = new List<TextMeshProUGUI>();
     [SerializeField] private BeerAndQuestsSpawner _src1;
     [SerializeField] private TenSecondsEvent _src2;
     [SerializeField] private PlayerMovement _src3;
@@ -78,6 +78,10 @@ public class QTESystem : MonoBehaviour
                 enabled = false;
                 _valueFor = 3;
                 _timeLeft.maxValue = _valueFor;
+            if(_numberOFQte == 5)
+            {
+                SceneManager.LoadScene(0);
+            }
             }
             _timeLeft.value -= Time.deltaTime;
             if (_timeLeft.value <= 0)
@@ -95,7 +99,9 @@ public class QTESystem : MonoBehaviour
         _src1.enabled = false;
         _src2.enabled = false;
         _src3.enabled = false;
+        _src3._animator.enabled = false;
         _gamePanel.gameObject.SetActive(false);
+        _src3.collision.transform.GetChild(0).gameObject.SetActive(false);
         _timeLeft.gameObject.SetActive(true);
     }
 
@@ -106,6 +112,7 @@ public class QTESystem : MonoBehaviour
         _src1.enabled = true;
         _src2.enabled = true;
         _src3.enabled = true;
+        _src3._animator.enabled = true;
         _gamePanel.gameObject.SetActive(true);
         _timeLeft.gameObject.SetActive(false);
         _timeLeft.value = _valueFor;
@@ -114,7 +121,6 @@ public class QTESystem : MonoBehaviour
     public void Exit()
     {
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
-        TurnOn();
         for (int i = 0; i < _variants[_numberOFQte].transform.childCount; i++)
         {
             _variants[_numberOFQte].transform.GetChild(i).GetComponent<Animator>().enabled = true;
@@ -124,6 +130,7 @@ public class QTESystem : MonoBehaviour
     }
     public void Caller()
     {
+        TurnOn();
         _variants[_numberOFQte].SetActive(false);
         for (int i = 0; i < _variants[_numberOFQte].transform.childCount; i++)
         {

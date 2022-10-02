@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _neededPromile;
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private Animator _animator;
+    public Animator _animator;
     [SerializeField] private SpriteRenderer _playerSprite;
     [SerializeField] private Sprite _standart;
     [SerializeField] private Sprite _drunker;
@@ -32,17 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
         if(_isInteractable)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if (collision.gameObject.layer == 6) //alcohol
+            {
+                collision.gameObject.SetActive(false);
+                ChangePromile(collision.GetComponent<SpriteRenderer>().sprite.name);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (collision.gameObject.layer == 3) //events
                 {
                     _qteSys.enabled = true;
                 }
-                if (collision.gameObject.layer == 6) //alcohol
-                {
-                    collision.gameObject.SetActive(false);
-                    ChangePromile(collision.GetComponent<SpriteRenderer>().sprite.name);
-                }
+                
             }
         }
         _promileLvl.text = _promile + "/100";
@@ -96,9 +98,10 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             _playerSprite.sprite = _standart;
+            Debug.Log(_promile);
             if(_promile <= _neededPromile)
             {
-                //lose
+                SceneManager.LoadScene(0);
                 _promile = 0;
             } 
         }

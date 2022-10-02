@@ -40,10 +40,9 @@ public class BeerAndQuestsSpawner : MonoBehaviour
 
     private void AlcoholSpawner()
     {
-        int amountOfPubs = Random.Range(1,11);
-        for (int i = 0; i < amountOfPubs; i++)
+        for (int i = 0; i < _alcoholSpawnPoints.childCount; i++)
         {
-            int picker = Random.Range(0, 10);
+            int picker = Random.Range(0, _alcoholSpawnPoints.childCount);
             int alcImgRandom = Random.Range(0, 4);
             _alcoholSpawnPoints.GetChild(picker).GetComponent<SpriteRenderer>().sprite = alcSprites.aclImgs[alcImgRandom];
             _alcoholSpawnPoints.GetChild(picker).gameObject.SetActive(true);
@@ -64,7 +63,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     }
     private void AlcoholDespawn()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < _alcoholSpawnPoints.childCount; i++)
         {
             _alcoholSpawnPoints.GetChild(i).gameObject.SetActive(false);
         }
@@ -75,7 +74,14 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         _isDrunk = madMicelsonNaPricole;
         if (_isDrunk == true)
         {
-            if(_kostl == 0)
+            for (int i = 0; i < _questTypes.Count; i++)
+            {
+                for (int j = 0; j < _questTypes[i].transform.childCount; j++)
+                {
+                    _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }
+            if (_kostl == 0)
             {
                 _hint.gameObject.SetActive(true);
             }
