@@ -77,11 +77,11 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         if (_isDrunk == true)
         {
             AlcoholSpawner();
-            UiAlcMod();
+            //UiAlcMod();
         } else
         {
             AlcoholDespawn();
-            UiQuestMod();
+            //UiQuestMod();
         }
     }
     

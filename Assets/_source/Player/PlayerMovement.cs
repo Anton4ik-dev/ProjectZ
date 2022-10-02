@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private float _promile;
     private bool _isInteractable = false;
-    private Collider2D _collision;
+    public Collider2D collision;
 
     private void Update()
     {
@@ -32,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                if (_collision.gameObject.layer == 3) //events
+                if (collision.gameObject.layer == 3) //events
                 {
                     _qteSys.enabled = true;
                 }
-                if (_collision.gameObject.layer == 6) //alcohol
+                if (collision.gameObject.layer == 6) //alcohol
                 {
-                    _collision.gameObject.SetActive(false);
-                    ChangePromile(_collision.GetComponent<SpriteRenderer>().sprite.name);
+                    collision.gameObject.SetActive(false);
+                    ChangePromile(collision.GetComponent<SpriteRenderer>().sprite.name);
                 }
             }
         }
@@ -52,16 +52,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _collision = collision;
-        if(_collision.gameObject.layer == 3)
-            _collision.transform.GetChild(0).gameObject.SetActive(true);
+        this.collision = collision;
+        if(this.collision.gameObject.layer == 3)
+            this.collision.transform.GetChild(0).gameObject.SetActive(true);
         _isInteractable = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(_collision.gameObject.layer == 3)
-            _collision.transform.GetChild(0).gameObject.SetActive(false);
+        if(this.collision.gameObject.layer == 3)
+            this.collision.transform.GetChild(0).gameObject.SetActive(false);
         _isInteractable = false;
     }
 

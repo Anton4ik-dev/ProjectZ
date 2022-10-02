@@ -14,13 +14,12 @@ public class QTESystem : MonoBehaviour
     [SerializeField] private PlayerMovement _src3;
     [SerializeField] private Transform _gamePanel;
     [SerializeField] private Slider _timeLeft;
-    private float _howMuchTimeLeft;
     private int _numberOFQte = 0;
     private int n = 1;
     private string rightCombo = "";
     private string input = "";
     private int id = 0;
-    private int _valueFor;
+    private int _valueFor = 5;
     void Update()
     {
         if(n == 1)
@@ -68,12 +67,18 @@ public class QTESystem : MonoBehaviour
         }
         if (rightCombo == input)
         {
-            Debug.Log("Right");
             _variants[_numberOFQte].SetActive(false);
             TurnOn();
+            _src3.collision.gameObject.SetActive(false);
             _numberOFQte++;
             enabled = false;
-            _timeLeft.maxValue = 5; 
+            _valueFor = 3;
+            _timeLeft.maxValue = _valueFor;
+        }
+        _timeLeft.value -= Time.deltaTime;
+        if(_timeLeft.value <= 0)
+        {
+            Exit();
         }
     }
     private void TurnOff()
@@ -97,11 +102,11 @@ public class QTESystem : MonoBehaviour
         _src3.enabled = true;
         _gamePanel.gameObject.SetActive(true);
         _timeLeft.gameObject.SetActive(false);
+        _timeLeft.value = _valueFor;
     }
 
     public void Exit()
     {
-        Debug.Log("ERROR");
         TurnOn();
         _variants[_numberOFQte].SetActive(false);
         enabled = false;
