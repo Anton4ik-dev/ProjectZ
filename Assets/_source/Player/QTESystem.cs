@@ -12,14 +12,15 @@ public class QTESystem : MonoBehaviour
     [SerializeField] private BeerAndQuestsSpawner _src1;
     [SerializeField] private TenSecondsEvent _src2;
     [SerializeField] private PlayerMovement _src3;
-    //[SerializeField] private Image _gamePanel;
-    //[SerializeField] private Slider _timeLeft;
+    [SerializeField] private Transform _gamePanel;
+    [SerializeField] private Slider _timeLeft;
     private float _howMuchTimeLeft;
     private int _numberOFQte = 0;
     private int n = 1;
     private string rightCombo = "";
     private string input = "";
     private int id = 0;
+    private int _valueFor;
     void Update()
     {
         if(n == 1)
@@ -72,6 +73,7 @@ public class QTESystem : MonoBehaviour
             TurnOn();
             _numberOFQte++;
             enabled = false;
+            _timeLeft.maxValue = 5; 
         }
     }
     private void TurnOff()
@@ -83,8 +85,8 @@ public class QTESystem : MonoBehaviour
         _src1.enabled = false;
         _src2.enabled = false;
         _src3.enabled = false;
-        //_gamePanel.gameObject.SetActive(false);
-        //_timeLeft.gameObject.SetActive(true);
+        _gamePanel.gameObject.SetActive(false);
+        _timeLeft.gameObject.SetActive(true);
     }
 
     private void TurnOn()
@@ -93,8 +95,8 @@ public class QTESystem : MonoBehaviour
         _src1.enabled = true;
         _src2.enabled = true;
         _src3.enabled = true;
-        //_gamePanel.gameObject.SetActive(true);
-        //_timeLeft.gameObject.SetActive(false);
+        _gamePanel.gameObject.SetActive(true);
+        _timeLeft.gameObject.SetActive(false);
     }
 
     public void Exit()
