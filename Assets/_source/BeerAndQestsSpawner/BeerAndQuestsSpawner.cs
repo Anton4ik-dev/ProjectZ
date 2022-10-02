@@ -12,7 +12,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
 
     void Start()
     {      
-        QestPicker();    
+        QestPicker();
+        Cursor.visible = false;
     }
 
     
