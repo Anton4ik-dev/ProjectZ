@@ -4,6 +4,7 @@ using Unity.Burst.CompilerServices;
 using UnityEditor.Sprites;
 using UnityEngine;
 
+
 public class BeerAndQuestsSpawner : MonoBehaviour
 {
     private bool _isDrunk;
@@ -15,13 +16,11 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private GameObject _alcoholUI;
     [SerializeField] private GameObject _alcStastsUI;
     
+    private int _kostl = 0;
 
     void Start()
     {      
-        if (_isDrunk == true)
-        {
-            _hint.gameObject.SetActive(true);
-        }
+        
         QestPicker();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -61,7 +60,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         _alcStastsUI.gameObject.SetActive(false);
         _questUI.SetActive(true);
         _alcoholUI.SetActive(false);
-        _hint.gameObject.SetActive(false);
+        
     }
     private void AlcoholDespawn()
     {
@@ -76,10 +75,16 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         _isDrunk = madMicelsonNaPricole;
         if (_isDrunk == true)
         {
+            if(_kostl == 0)
+            {
+                _hint.gameObject.SetActive(true);
+            }
             AlcoholSpawner();
             UiAlcMod();
         } else
         {
+            _hint.gameObject.SetActive(false);
+            _kostl++;
             AlcoholDespawn();
             UiQuestMod();
         }

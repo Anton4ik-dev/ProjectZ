@@ -832,6 +832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980c2256812d82e46bf7caede8fde608, type: 3}
+--- !u!1 &267148009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3443608197961427724, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &321023265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1303,6 +1308,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7989925949452704909, guid: 66dbbe473406c9f47b1273e6a9dbe386, type: 3}
   m_PrefabInstance: {fileID: 440271669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &455664620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3443608198671858465, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &471230960
 GameObject:
@@ -2258,10 +2268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2467,6 +2477,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800386463}
   m_CullTransparentMesh: 1
+--- !u!114 &813241485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9097483059472028564, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &834855070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2482,6 +2503,10 @@ PrefabInstance:
       propertyPath: _qteSys
       value: 
       objectReference: {fileID: 1715801033}
+    - target: {fileID: 7167285508363179548, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
+      propertyPath: _promileLvl
+      value: 
+      objectReference: {fileID: 1626237633}
     - target: {fileID: 7167285508363179548, guid: c041660e2d919ba498c20b2260bba80e, type: 3}
       propertyPath: _alcoholData
       value: 
@@ -4152,6 +4177,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318727854}
   m_CullTransparentMesh: 1
+--- !u!1 &1335294692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3443608197054122901, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1349978004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8163539925581823281, guid: 980c2256812d82e46bf7caede8fde608, type: 3}
@@ -5022,6 +5052,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8457485386471032565, guid: 74655f12deb0e0742aab56666a352e83, type: 3}
   m_PrefabInstance: {fileID: 1613008573}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626237633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3443608197609523719, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1638803571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5344,6 +5385,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 732753992}
     m_Modifications:
+    - target: {fileID: 2289538257768653028, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289538257768653028, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3443608198033487930, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5431,6 +5480,22 @@ PrefabInstance:
     - target: {fileID: 3443608198033487931, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
       propertyPath: m_Name
       value: PrefabChtobNeubitProekt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615222463054839452, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615222463054839452, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615222463054839452, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097483059472028564, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_Value
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
@@ -5767,6 +5832,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1463208168582080945, guid: 4b19f87714eedde40bf4e410b9bebd8f, type: 3}
   m_PrefabInstance: {fileID: 1832451408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1842131027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3443608197369597026, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848605205
 GameObject:
@@ -7101,9 +7171,25 @@ PrefabInstance:
       value: Alcohol&QuestMeneger
       objectReference: {fileID: 0}
     - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _hint
+      value: 
+      objectReference: {fileID: 267148009}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _questUI
+      value: 
+      objectReference: {fileID: 1842131027}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _alcoholUI
+      value: 
+      objectReference: {fileID: 1335294692}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
       propertyPath: alcSprites
       value: 
       objectReference: {fileID: 1705340273}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _alcStastsUI
+      value: 
+      objectReference: {fileID: 455664620}
     - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
       propertyPath: _alcoholSpawnPoints
       value: 
@@ -7181,6 +7267,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1886344882}
     m_Modifications:
+    - target: {fileID: 2913469127182590770, guid: ba6a46f3b31c72b4fa3b1d58de5a808a, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 813241485}
+    - target: {fileID: 2913469127182590770, guid: ba6a46f3b31c72b4fa3b1d58de5a808a, type: 3}
+      propertyPath: _timerBar
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2913469127182590770, guid: ba6a46f3b31c72b4fa3b1d58de5a808a, type: 3}
       propertyPath: _beerMethod
       value: 
