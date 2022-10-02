@@ -1881,6 +1881,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2744682942959682786, guid: c53d3276ec7d3df4489ff7a333688513, type: 3}
   m_PrefabInstance: {fileID: 2744682942302707984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &699753557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3443608197625320873, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &701215226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,6 +5486,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabChtobNeubitProekt
       objectReference: {fileID: 0}
+    - target: {fileID: 5947752776278359577, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294177716949974863, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58c7307db84ef9444a5cc8d09e0550dd, type: 3}
     - target: {fileID: 7615222463054839452, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5502,6 +5515,11 @@ PrefabInstance:
 --- !u!224 &1716352417 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3443608198033487930, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
+  m_PrefabInstance: {fileID: 1716352416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1716352418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5947752776278359577, guid: af089355e9a9cfd4fb8823d3c59f748e, type: 3}
   m_PrefabInstance: {fileID: 1716352416}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1735764527
@@ -7187,6 +7205,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1705340273}
     - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _emojyDrunk
+      value: 
+      objectReference: {fileID: 1716352418}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
       propertyPath: _alcStastsUI
       value: 
       objectReference: {fileID: 455664620}
@@ -7194,6 +7216,18 @@ PrefabInstance:
       propertyPath: _alcoholSpawnPoints
       value: 
       objectReference: {fileID: 708464652}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _modideIdentificator
+      value: 
+      objectReference: {fileID: 699753557}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _modideIdentificatorAlc
+      value: 
+      objectReference: {fileID: 21300000, guid: b7f9df7cfb31f66408b3deae372fa92c, type: 3}
+    - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
+      propertyPath: _modideIdentificatorQuest
+      value: 
+      objectReference: {fileID: 21300000, guid: 58c7307db84ef9444a5cc8d09e0550dd, type: 3}
     - target: {fileID: 4911466396922803656, guid: 9bbdb66e01cbde94ba4e3d168862326d, type: 3}
       propertyPath: _questTypes.Array.data[0]
       value: 
