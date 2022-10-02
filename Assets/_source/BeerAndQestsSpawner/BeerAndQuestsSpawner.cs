@@ -15,7 +15,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private GameObject _questUI;
     [SerializeField] private GameObject _alcoholUI;
     [SerializeField] private GameObject _alcStastsUI;
-    
+
     private int _kostl = 0;
 
     void Start()
@@ -83,6 +83,13 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             //UiAlcMod();
         } else
         {
+            for (int i = 0; i < _questTypes.Count; i++)
+            {
+                for (int j = 0; j < _questTypes[i].transform.childCount; j++)
+                {
+                    _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = true;
+                }
+            }
             _hint.gameObject.SetActive(false);
             _kostl++;
             AlcoholDespawn();
