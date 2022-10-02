@@ -98,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             _playerSprite.sprite = _standart;
-            Debug.Log(_promile);
             if(_promile <= _neededPromile)
             {
                 SceneManager.LoadScene(0);
