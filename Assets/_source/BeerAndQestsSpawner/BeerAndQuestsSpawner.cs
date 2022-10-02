@@ -33,7 +33,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         int picker = 0;
         for (int i = 0; i < _questTypes.Count; i++)
         {
-            picker = Random.Range(0, 5);
+            picker = Random.Range(0, _questTypes[i].childCount);
             _questTypes[i].GetChild(picker).gameObject.SetActive(true);
         }
         
