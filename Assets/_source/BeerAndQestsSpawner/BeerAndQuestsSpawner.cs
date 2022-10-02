@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEditor.Sprites;
 using UnityEngine;
 
@@ -9,11 +10,21 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private Transform _alcoholSpawnPoints;
     [SerializeField] private List<Transform> _questTypes = new List<Transform>();
     [SerializeField] private AlcoholData alcSprites;
+    [SerializeField] private GameObject _hint;
+    [SerializeField] private GameObject _questUI;
+    [SerializeField] private GameObject _alcoholUI;
+    [SerializeField] private GameObject _alcStastsUI;
+    
 
     void Start()
     {      
+        if (_isDrunk == true)
+        {
+            _hint.gameObject.SetActive(true);
+        }
         QestPicker();
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     
@@ -39,6 +50,19 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             _alcoholSpawnPoints.GetChild(picker).gameObject.SetActive(true);
         }
     }
+    private void UiAlcMod()
+    {   
+        _alcStastsUI.gameObject.SetActive(true);
+        _alcoholUI.SetActive(true);
+        _questUI.SetActive(false);
+    }
+    private void UiQuestMod()
+    {
+        _alcStastsUI.gameObject.SetActive(false);
+        _questUI.SetActive(true);
+        _alcoholUI.SetActive(false);
+        _hint.gameObject.SetActive(false);
+    }
     private void AlcoholDespawn()
     {
         for (int i = 0; i < 10; i++)
@@ -53,9 +77,11 @@ public class BeerAndQuestsSpawner : MonoBehaviour
         if (_isDrunk == true)
         {
             AlcoholSpawner();
+            UiAlcMod();
         } else
         {
             AlcoholDespawn();
+            UiQuestMod();
         }
     }
     
