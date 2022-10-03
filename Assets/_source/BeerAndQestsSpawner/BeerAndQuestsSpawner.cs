@@ -77,6 +77,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                 for (int j = 0; j < _questTypes[i].transform.childCount; j++)
                 {
                     _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = false;
+                    _questTypes[i].transform.GetChild(j).GetChild(1).gameObject.SetActive(false);
                 }
             }
             if (_kostl == 0)
@@ -91,7 +92,11 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             {
                 for (int j = 0; j < _questTypes[i].transform.childCount; j++)
                 {
-                    _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = true;
+                    if(_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().isInteractable)
+                    {
+                        _questTypes[i].transform.GetChild(j).GetComponent<BoxCollider2D>().enabled = true;
+                        _questTypes[i].transform.GetChild(j).GetChild(1).gameObject.SetActive(true);
+                    }
                 }
             }
             _hint.gameObject.SetActive(false);

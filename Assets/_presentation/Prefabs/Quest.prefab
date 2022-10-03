@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045830878049542590}
   - component: {fileID: 1580426926280748881}
+  - component: {fileID: 6091730937671827889}
   m_Layer: 3
   m_Name: CheckMark
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6091730937671827889
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761538753841096862}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41b29484e28795a47a37f3fe63b92ef1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7531990290193004076
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7989925949452704909
 Transform:
   m_ObjectHideFlags: 0
@@ -296,3 +317,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 0}
   isNotTried: 1
+  isInteractable: 1

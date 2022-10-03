@@ -73,7 +73,9 @@ public class QTESystem : MonoBehaviour
             {
                 _variants[_numberOFQte].SetActive(false);
                 TurnOn();
-                _src3.collision.gameObject.SetActive(false);
+                _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
+                _src3.collision.transform.GetComponent<TextSaver>().isInteractable = false;
+                _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
                 _numberOFQte++;
                 enabled = false;
                 _valueFor = 3;
@@ -120,6 +122,8 @@ public class QTESystem : MonoBehaviour
 
     public void Exit()
     {
+        _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
+        _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
         for (int i = 0; i < _variants[_numberOFQte].transform.childCount; i++)
         {
