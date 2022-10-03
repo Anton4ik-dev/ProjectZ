@@ -100,9 +100,11 @@ public class PlayerMovement : MonoBehaviour
             _playerSprite.sprite = _standart;
             if(_promile <= _neededPromile)
             {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene(0);
-                _promile = 0;
-            } 
+            }
+            _promile = 0;
         }
     }
 }

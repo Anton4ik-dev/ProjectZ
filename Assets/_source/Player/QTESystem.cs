@@ -78,10 +78,12 @@ public class QTESystem : MonoBehaviour
                 _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
                 _numberOFQte++;
                 enabled = false;
-                _valueFor = 3;
+                _valueFor = 4;
                 _timeLeft.maxValue = _valueFor;
             if(_numberOFQte == 5)
             {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene(0);
             }
             }
