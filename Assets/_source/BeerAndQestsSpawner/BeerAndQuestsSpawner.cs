@@ -45,10 +45,9 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     {
         for (int i = 0; i < _alcoholSpawnPoints.childCount; i++)
         {
-            int picker = Random.Range(0, _alcoholSpawnPoints.childCount);
             int alcImgRandom = Random.Range(0, 4);
-            _alcoholSpawnPoints.GetChild(picker).GetComponent<SpriteRenderer>().sprite = alcSprites.aclImgs[alcImgRandom];
-            _alcoholSpawnPoints.GetChild(picker).gameObject.SetActive(true);
+            _alcoholSpawnPoints.GetChild(i).GetComponent<SpriteRenderer>().sprite = alcSprites.aclImgs[alcImgRandom];
+            _alcoholSpawnPoints.GetChild(i).gameObject.SetActive(true);
         }
     }
     private void UiAlcMod()
