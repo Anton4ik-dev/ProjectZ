@@ -158,7 +158,7 @@ public class QTESystem : MonoBehaviour
 
     public void Exit()
     {
-        _audio._main.UnPause();
+        
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
         _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
@@ -171,6 +171,7 @@ public class QTESystem : MonoBehaviour
     }
     public void Caller()
     {
+        _audio._main.UnPause();
         TurnOn();
         _variants[_numberOFQte].SetActive(false);
         for (int i = 0; i < _variants[_numberOFQte].transform.childCount; i++)
