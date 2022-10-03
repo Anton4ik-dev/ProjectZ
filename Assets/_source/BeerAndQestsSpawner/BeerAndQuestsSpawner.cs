@@ -92,9 +92,8 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                 _hint.gameObject.SetActive(true);
                 _kostl++;
             }
-            
-            
-            
+            Invoke("SetFalse", 5);
+
             AlcoholSpawner();
             UiAlcMod();
         } else
@@ -114,9 +113,10 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             if (_kostl < 4)
             {
                 _hintText.text = _hints[_kostl];
+                _hint.gameObject.SetActive(true);
                 _kostl++;
             }
-            Invoke("SetFalse", 5);
+            Invoke("SetFalse",  5);
             
             AlcoholDespawn();
             UiQuestMod();
@@ -124,7 +124,7 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     }
     private void SetFalse()
     {
-        _hintText.gameObject.SetActive(false);
+        _hint.gameObject.SetActive(false);
     }
     public void questDoneChecker(TextSaver quest)
     {

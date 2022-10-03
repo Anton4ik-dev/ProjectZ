@@ -18,11 +18,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private QTESystem _qteSys;
     [SerializeField] private TMP_Text _promileLvl;
     [SerializeField] private AudioSources _audio;
+    [SerializeField] private GameObject _losePanel;
     
     private Vector2 movement;
     private float _promile;
     private bool _isInteractable = false;
     public Collider2D collision;
+
+    private void Start()
+    {
+        _audio._main.Play();
+    }
 
     private void Update()
     {
@@ -103,17 +109,30 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetBool("Mod", mod);
         if(mod)
         {
+            _audio._main.Pause();
+            _audio._startAlco.Play();
+            _audio._alcoMusic.Play();
+            _promileLvl.transform.parent.gameObject.SetActive(true);
             _playerSprite.sprite = _drunker;
         } else
         {
+            _audio._alcoMusic.Pause();
+            _promileLvl.transform.parent.gameObject.SetActive(false);
             _playerSprite.sprite = _standart;
-            if(_promile <= _neededPromile)
+            if(_promile < _neededPromile)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                SceneManager.LoadScene(0);
+                _losePanel.SetActive(true);
+                Time.timeScale = 0;
             }
+            _audio._endAlco.Play();
+            Invoke("LateInvoke", 0.7f);
             _promile = 0;
         }
+    }
+    private void LateInvoke()
+    {
+        _audio._main.UnPause();
     }
 }

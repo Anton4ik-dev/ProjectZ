@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     public void Starter()
     {
         Time.timeScale = 1;
-        _button.transform.parent.gameObject.SetActive(false);
+        _button.transform.parent.parent.gameObject.SetActive(false);
         _button.gameObject.SetActive(false);
         _player.GetComponent<PlayerMovement>().enabled = true;
         Cursor.visible = false;
