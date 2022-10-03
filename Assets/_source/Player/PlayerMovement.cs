@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AlcoholData _alcoholData;
     [SerializeField] private QTESystem _qteSys;
     [SerializeField] private TMP_Text _promileLvl;
+    [SerializeField] private AudioSources _audio;
     
     private Vector2 movement;
     private float _promile;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (collision.gameObject.layer == 6) //alcohol
             {
+                _audio._drink.Play();
                 collision.gameObject.SetActive(false);
                 ChangePromile(collision.GetComponent<SpriteRenderer>().sprite.name);
             }
@@ -60,14 +62,20 @@ public class PlayerMovement : MonoBehaviour
     {
         this.collision = collision;
         if(this.collision.gameObject.layer == 3)
+        {
             this.collision.transform.GetChild(0).gameObject.SetActive(true);
+            this.collision.transform.GetChild(1).gameObject.SetActive(false);
+        }
         _isInteractable = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(this.collision.gameObject.layer == 3)
+        if (this.collision.gameObject.layer == 3)
+        {
             this.collision.transform.GetChild(0).gameObject.SetActive(false);
+            this.collision.transform.GetChild(1).gameObject.SetActive(true);
+        }
         _isInteractable = false;
     }
 

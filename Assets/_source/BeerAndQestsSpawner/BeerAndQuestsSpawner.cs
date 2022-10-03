@@ -18,7 +18,6 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private GameObject _alcStastsUI;
     [SerializeField] private List<string> _hints = new List<string>();
     [SerializeField] private List<Toggle> _checkBoxes = new List<Toggle>();
-
     private int _kostl = 0;
 
 
@@ -28,8 +27,6 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     {      
             
         QestPicker();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     
@@ -91,7 +88,6 @@ public class BeerAndQuestsSpawner : MonoBehaviour
 
            if(_kostl < 4)
             {
-                Debug.Log(_kostl);
                 _hintText.text = _hints[_kostl];
                 _hint.gameObject.SetActive(true);
                 _kostl++;
@@ -117,40 +113,40 @@ public class BeerAndQuestsSpawner : MonoBehaviour
             
             if (_kostl < 4)
             {
-                Debug.Log(_kostl);
                 _hintText.text = _hints[_kostl];
                 _kostl++;
             }
-            
+            Invoke("SetFalse", 5);
             
             AlcoholDespawn();
             UiQuestMod();
         }
     }
-    public void questDoneChecker()
+    private void SetFalse()
     {
-        for (int i = 0; i < _questTypes.Count; i++)
+        _hintText.gameObject.SetActive(false);
+    }
+    public void questDoneChecker(TextSaver quest)
+    {
+        if (quest.questType == "Rats")
         {
-            for (int j = 0; j < _questTypes[i].transform.childCount; j++)
-            {
-                if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Rats")
-                {
-                    _checkBoxes[2].isOn = true;
-                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Fontain")
-                {
-                    _checkBoxes[4].isOn = true;
-                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "OldMans")
-                {
-                    _checkBoxes[3].isOn = true;
-                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Dogs")
-                {
-                    _checkBoxes[0].isOn = true;
-                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Knockknock")
-                {
-                    _checkBoxes[1].isOn = true;
-                }
-
-            }
+            _checkBoxes[4].isOn = true;
+        }
+        else if (quest.questType == "Fontain")
+        {
+            _checkBoxes[2].isOn = true;
+        }
+        else if (quest.questType == "OldMans")
+        {
+            _checkBoxes[3].isOn = true;
+        }
+        else if (quest.questType == "Dogs")
+        {
+            _checkBoxes[0].isOn = true;
+        }
+        else if (quest.questType == "Knockknock")
+        {
+            _checkBoxes[1].isOn = true;
         }
     }
 }

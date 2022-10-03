@@ -16,6 +16,7 @@ public class QTESystem : MonoBehaviour
     [SerializeField] private PlayerMovement _src3;
     [SerializeField] private Transform _gamePanel;
     [SerializeField] private Slider _timeLeft;
+    [SerializeField] private AudioSources _audio;
     private int _numberOFQte = 0;
     private int n = 1;
     private string rightCombo = "";
@@ -24,7 +25,6 @@ public class QTESystem : MonoBehaviour
     private int _valueFor = 5;
     void Update()
     {
-        
             if (n == 1)
             {
                 TurnOff();
@@ -39,29 +39,35 @@ public class QTESystem : MonoBehaviour
             }
             if (Input.anyKeyDown)
             {
+            _audio._buttonSound.Play();
                 if (Input.GetKeyDown(KeyCode.E) && rightCombo[id] == 'E')
                 {
-                    input += "E";
+                _variants[_numberOFQte].transform.GetChild(id).GetComponent<Image>().color = Color.green;
+                input += "E";
                     id++;
                 }
                 else if (Input.GetKeyDown(KeyCode.R) && rightCombo[id] == 'R')
                 {
-                    input += "R";
+                _variants[_numberOFQte].transform.GetChild(id).GetComponent<Image>().color = Color.green;
+                input += "R";
                     id++;
                 }
                 else if (Input.GetKeyDown(KeyCode.T) && rightCombo[id] == 'T')
                 {
-                    input += "T";
+                _variants[_numberOFQte].transform.GetChild(id).GetComponent<Image>().color = Color.green;
+                input += "T";
                     id++;
                 }
                 else if (Input.GetKeyDown(KeyCode.G) && rightCombo[id] == 'G')
                 {
-                    input += "G";
+                _variants[_numberOFQte].transform.GetChild(id).GetComponent<Image>().color = Color.green;
+                input += "G";
                     id++;
                 }
                 else if (Input.GetKeyDown(KeyCode.V) && rightCombo[id] == 'V')
                 {
-                    input += "V";
+                _variants[_numberOFQte].transform.GetChild(id).GetComponent<Image>().color = Color.green;
+                input += "V";
                     id++;
                 }
                 else
@@ -71,16 +77,36 @@ public class QTESystem : MonoBehaviour
             }
             if (rightCombo == input)
             {
-                _variants[_numberOFQte].SetActive(false);
-                TurnOn();
-                _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
-                _src3.collision.transform.GetComponent<TextSaver>().isInteractable = false;
-                _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
-                _numberOFQte++;
-                enabled = false;
-                _valueFor = 4;
-                _timeLeft.maxValue = _valueFor;
-            if(_numberOFQte == 5)
+            if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Rats")
+            {
+                _audio._mouse.Play();
+            }
+            else if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Fontain")
+            {
+                _audio._water.Play();
+            }
+            else if (_src3.collision.transform.GetComponent<TextSaver>().questType == "OldMans")
+            {
+                _audio._oldMan.Play();
+            }
+            else if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Dogs")
+            {
+                _audio._bark.Play();
+            }
+            else if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Knockknock")
+            {
+                _audio._knock.Play();
+            }
+            _variants[_numberOFQte].SetActive(false);
+            TurnOn();
+            _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
+            _src3.collision.transform.GetComponent<TextSaver>().isInteractable = false;
+            _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
+            _numberOFQte++;
+            enabled = false;
+            _valueFor = 4;
+            _timeLeft.maxValue = _valueFor;
+            if (_numberOFQte == 5)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

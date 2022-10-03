@@ -21,6 +21,7 @@ public class SceneManagement : MonoBehaviour
     }
     private void Play()
     {
+        Time.timeScale = 0;
         SceneManager.LoadScene(1);
     }
     private void Exit()

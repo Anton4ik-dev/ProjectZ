@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8457485386471032565
 Transform:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 670fa20034ad8144bb1a4ffaf6acc371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,6 +109,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8457485386471032565}
     m_Modifications:
+    - target: {fileID: 1879580879450193629, guid: 52a560734fed59644b9c5b786c950f6d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2297268152036419232, guid: 52a560734fed59644b9c5b786c950f6d, type: 3}
       propertyPath: m_Name
       value: "\u041A\u0440\u0443\u0433 \u0421\u0438\u043D\u0438\u0439 \u0441 \u0417\u0435\u043B\u0451\u043D\u043E\u0439

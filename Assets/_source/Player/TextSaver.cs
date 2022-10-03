@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class TextSaver : MonoBehaviour
 {
+    private static BeerAndQuestsSpawner _src;
     public GameObject _text;
     public bool isNotTried = true;
+    private bool _isInteractable = true;
+    private void Start()
+    {
+        _src = FindObjectOfType<BeerAndQuestsSpawner>();
+    }
     public bool isInteractable
     {
-        get => isInteractable;
+        get => _isInteractable;
 
         set
         {
-            if (isInteractable != value)
+            if (_isInteractable != value)
             {
-                isInteractable = value;
+                _src.questDoneChecker(this);
+                _isInteractable = value;
             }
         }
     }
