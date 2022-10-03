@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AlcoholData _alcoholData;
     [SerializeField] private QTESystem _qteSys;
     [SerializeField] private TMP_Text _promileLvl;
+    
     private Vector2 movement;
     private float _promile;
     private bool _isInteractable = false;
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
                 
             }
         }
-        _promileLvl.text = _promile + "/100";
+        _promileLvl.text = _promile + "/" + _neededPromile;
     }
 
     private void FixedUpdate()

@@ -6,5 +6,18 @@ public class TextSaver : MonoBehaviour
 {
     public GameObject _text;
     public bool isNotTried = true;
-    public bool isInteractable = true;
+    public bool isInteractable
+    {
+        get => isInteractable;
+
+        set
+        {
+            if (isInteractable != value)
+            {
+                isInteractable = value;
+            }
+        }
+    }
+    public string questType;
+
 }

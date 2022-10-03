@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 
 public class BeerAndQuestsSpawner : MonoBehaviour
@@ -10,15 +12,21 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     [SerializeField] private List<Transform> _questTypes = new List<Transform>();
     [SerializeField] private AlcoholData alcSprites;
     [SerializeField] private GameObject _hint;
+    [SerializeField] private TMP_Text _hintText;
     [SerializeField] private GameObject _questUI;
     [SerializeField] private GameObject _alcoholUI;
     [SerializeField] private GameObject _alcStastsUI;
+    [SerializeField] private List<string> _hints = new List<string>();
+    [SerializeField] private List<Toggle> _checkBoxes = new List<Toggle>();
 
     private int _kostl = 0;
 
+
+    
+
     void Start()
     {      
-        
+            
         QestPicker();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -80,12 +88,19 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                     _questTypes[i].transform.GetChild(j).GetChild(1).gameObject.SetActive(false);
                 }
             }
-            if (_kostl == 0)
+
+           if(_kostl < 4)
             {
+                Debug.Log(_kostl);
+                _hintText.text = _hints[_kostl];
                 _hint.gameObject.SetActive(true);
+                _kostl++;
             }
+            
+            
+            
             AlcoholSpawner();
-            //UiAlcMod();
+            UiAlcMod();
         } else
         {
             for (int i = 0; i < _questTypes.Count; i++)
@@ -99,11 +114,43 @@ public class BeerAndQuestsSpawner : MonoBehaviour
                     }
                 }
             }
-            _hint.gameObject.SetActive(false);
-            _kostl++;
+            
+            if (_kostl < 4)
+            {
+                Debug.Log(_kostl);
+                _hintText.text = _hints[_kostl];
+                _kostl++;
+            }
+            
+            
             AlcoholDespawn();
-            //UiQuestMod();
+            UiQuestMod();
         }
     }
-    
+    public void questDoneChecker()
+    {
+        for (int i = 0; i < _questTypes.Count; i++)
+        {
+            for (int j = 0; j < _questTypes[i].transform.childCount; j++)
+            {
+                if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Rats")
+                {
+                    _checkBoxes[2].isOn = true;
+                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Fontain")
+                {
+                    _checkBoxes[4].isOn = true;
+                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "OldMans")
+                {
+                    _checkBoxes[3].isOn = true;
+                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Dogs")
+                {
+                    _checkBoxes[0].isOn = true;
+                } else if (_questTypes[i].transform.GetChild(j).GetComponent<TextSaver>().questType == "Knockknock")
+                {
+                    _checkBoxes[1].isOn = true;
+                }
+
+            }
+        }
+    }
 }
