@@ -109,14 +109,10 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetBool("Mod", mod);
         if(mod)
         {
-            _audio._main.Pause();
-            _audio._startAlco.Play();
-            _audio._alcoMusic.Play();
             _promileLvl.transform.parent.gameObject.SetActive(true);
             _playerSprite.sprite = _drunker;
         } else
         {
-            _audio._alcoMusic.Pause();
             _promileLvl.transform.parent.gameObject.SetActive(false);
             _playerSprite.sprite = _standart;
             if(_promile < _neededPromile)
@@ -124,15 +120,11 @@ public class PlayerMovement : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 _losePanel.SetActive(true);
+                _audio._main.Pause();
                 Time.timeScale = 0;
             }
             _audio._endAlco.Play();
-            Invoke("LateInvoke", 0.7f);
             _promile = 0;
         }
-    }
-    private void LateInvoke()
-    {
-        _audio._main.UnPause();
     }
 }

@@ -13,7 +13,5 @@ public class AudioSources : MonoBehaviour
     public AudioSource _main;
     public AudioSource _buttonSound;
     public AudioSource _drink;
-    public AudioSource _startAlco;
-    public AudioSource _alcoMusic;
     public AudioSource _endAlco;
 }

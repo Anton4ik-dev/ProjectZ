@@ -30,6 +30,7 @@ public class QTESystem : MonoBehaviour
     {
             if (n == 1)
             {
+            _audio._main.Pause();
                 TurnOff();
                 for (int i = 0; i < _numberOFQte + 1; i++)
                 {
@@ -80,6 +81,7 @@ public class QTESystem : MonoBehaviour
             }
             if (rightCombo == input)
             {
+            _audio._main.UnPause();
             if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Rats")
             {
                 _audio._mouse.Play();
@@ -113,7 +115,7 @@ public class QTESystem : MonoBehaviour
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                
+                _audio._main.Pause();
                 Invoke("LateTurnOn", 10);
                 
                 _winPanel.SetActive(true);
@@ -156,6 +158,7 @@ public class QTESystem : MonoBehaviour
 
     public void Exit()
     {
+        _audio._main.UnPause();
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
         _src3.collision.transform.GetChild(1).gameObject.SetActive(false);
         _src3.collision.GetComponent<BoxCollider2D>().enabled = false;
