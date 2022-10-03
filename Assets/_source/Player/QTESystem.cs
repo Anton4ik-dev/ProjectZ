@@ -17,12 +17,15 @@ public class QTESystem : MonoBehaviour
     [SerializeField] private Transform _gamePanel;
     [SerializeField] private Slider _timeLeft;
     [SerializeField] private AudioSources _audio;
+    [SerializeField] private GameObject _winPanel;
     private int _numberOFQte = 0;
     private int n = 1;
     private string rightCombo = "";
     private string input = "";
     private int id = 0;
     private int _valueFor = 5;
+    
+
     void Update()
     {
             if (n == 1)
@@ -110,7 +113,10 @@ public class QTESystem : MonoBehaviour
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                SceneManager.LoadScene(0);
+                
+                Invoke("LateTurnOn", 10);
+                
+                _winPanel.SetActive(true);
             }
             }
             _timeLeft.value -= Time.deltaTime;
@@ -169,5 +175,11 @@ public class QTESystem : MonoBehaviour
             _variants[_numberOFQte].transform.GetChild(i).GetComponent<Animator>().enabled = false;
             _variants[_numberOFQte].transform.GetChild(i).GetComponent<Image>().color = Color.white;
         }
+    }
+
+    private void LateTurnOn()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(0);
     }
 }

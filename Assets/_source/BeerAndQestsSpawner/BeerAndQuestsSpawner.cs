@@ -24,9 +24,9 @@ public class BeerAndQuestsSpawner : MonoBehaviour
     
 
     void Start()
-    {      
-            
+    {        
         QestPicker();
+
     }
 
     
