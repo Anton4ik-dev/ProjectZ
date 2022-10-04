@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (collision.gameObject.layer == 3) //events
                 {
+
+                    
                     _qteSys.enabled = true;
                 }
                 

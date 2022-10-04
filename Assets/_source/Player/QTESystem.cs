@@ -24,14 +24,16 @@ public class QTESystem : MonoBehaviour
     private string input = "";
     private int id = 0;
     private int _valueFor = 5;
+    private float saveTimer;
     
 
     void Update()
     {
             if (n == 1)
             {
+            saveTimer = _audio._main.time;
             _audio._main.Pause();
-                TurnOff();
+            TurnOff();
                 for (int i = 0; i < _numberOFQte + 1; i++)
                 {
                     int num = Random.Range(0, 5);
@@ -81,6 +83,7 @@ public class QTESystem : MonoBehaviour
             }
             if (rightCombo == input)
             {
+            _audio._main.time = saveTimer;
             _audio._main.UnPause();
             if (_src3.collision.transform.GetComponent<TextSaver>().questType == "Rats")
             {
@@ -171,6 +174,7 @@ public class QTESystem : MonoBehaviour
     }
     public void Caller()
     {
+        _audio._main.time = saveTimer;
         _audio._main.UnPause();
         TurnOn();
         _variants[_numberOFQte].SetActive(false);
